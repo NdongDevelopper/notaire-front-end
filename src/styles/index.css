@@ -1,0 +1,126 @@
+@import 'tailwindcss';
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+@theme {
+  --color-bg-sidebar: #11162a;
+  --color-bg-dashboard: #f8fafc;
+
+  /* Texte sidebar */
+  --color-text-sidebar: #ffffff;
+  --color-text-sidebar-muted: #a1a1aa;
+
+  /* Texte dashboard */
+  --color-text: #0f172a;
+  --color-text-muted: #475569;
+
+  /* Interaction */
+  --color-activeBtn: #2563eb;
+  --color-hover-sidebar: rgba(255, 255, 255, 0.08);
+  --color-active-sidebar: rgba(59, 130, 246, 0.15);
+  --color-border: rgba(255, 255, 255, 0.08);
+
+  --color-primary: #2563eb;
+  --color-primary-hover: #1d4ed8;
+  --color-secondary: #f1f5f9;
+  --color-secondary-hover: #e2e8f0;
+  --color-secondary-text: #0f172a;
+
+  --color-success: #16a34a;
+  --color-warning: #d97706;
+}
+
+@layer utilities {
+  .bord {
+    border: 1px solid black;
+  }
+}
+
+@media print {
+  html,
+  body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+    color: #000000;
+  }
+
+  body * {
+    visibility: hidden !important;
+  }
+
+  .printable,
+  .printable * {
+    visibility: visible !important;
+  }
+
+  .printable {
+    display: block !important;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    border: none !important;
+    box-shadow: none !important;
+    background: #ffffff !important;
+  }
+
+  .printable * {
+    border-color: transparent !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  .printable table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+  }
+
+  .printable th,
+  .printable td {
+    border: none !important;
+    background-color: #ffffff !important;
+  }
+
+  .printable .bg-white {
+    background-color: #ffffff !important;
+  }
+
+  .printable .bg-slate-100 {
+    background-color: #f8fafc !important;
+  }
+
+  .printable .text-blue-600 {
+    color: #2563eb !important;
+  }
+
+  .printable .text-emerald-600 {
+    color: #16a34a !important;
+  }
+
+  .printable .shadow-sm {
+    box-shadow: none !important;
+  }
+}
